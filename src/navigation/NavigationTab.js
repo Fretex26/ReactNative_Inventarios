@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { MaterialIcons } from '@expo/vector-icons';
 import HomeScreen from '../screens/HomeScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import images from '../assets/images';
 
 const Tab = createBottomTabNavigator()
 
@@ -16,7 +17,7 @@ const PokeIcon = ({ onPress }) => (
     }}
   >
     <Image
-      source={require('./../assets/pokeball.png')}
+      source={images.logoCircularInventarios}
       style={{
         width: 90,
         height: 90,
@@ -29,28 +30,29 @@ const PokeIcon = ({ onPress }) => (
 export default function NavigationTab() {
   return (
     <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} options={{
+        {/* <Tab.Screen name="Home" component={HomeScreen} options={{
           tabBarLabel: 'yondu',
           tabBarIcon: ({color,size})=>(
             <MaterialIcons name='settings' color={color} size={size}/>
           )
-        }}/>
+        }}/> */}
 
-        <Tab.Screen name='settings' component={SettingsScreen} 
+        <Tab.Screen name='Home' component={HomeScreen} 
           options={({navigation})=>({
             tabBarLabel: '',
             tabBarIcon: () => (
-              <PokeIcon onPress={() => navigation.navigate('settings')}/>
-            )
+              <PokeIcon onPress={() => navigation.navigate('Home')}/>
+            ),
+            headerShown: false
           })}
         />
         
-        <Tab.Screen name="Settings" component={SettingsScreen} options={{
+        {/* <Tab.Screen name="Settings" component={SettingsScreen} options={{
           tabBarLabel: 'Settings',
           tabBarIcon: ({color,size})=>(
             <MaterialIcons name='settings' color={color} size={size}/>
           )
-        }}/>
+        }}/> */}
     </Tab.Navigator>
   )
 }
