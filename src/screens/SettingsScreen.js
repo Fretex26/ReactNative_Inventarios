@@ -11,7 +11,10 @@ export default function SettingsScreen(props) {
 
   return (
     <View>
-      <Text>SettingsScreen</Text>
+      <Text style={{
+        fontSize: 56,
+        textAlign: 'center',
+      }}>Hola IDI</Text>
       <Button title='Ir a Home' onPress={goToHome}/>
     </View>
   )

@@ -16,8 +16,8 @@ export default function HomeScreen(props) {
   return (
     <SafeAreaView>
       <Image source={images.logoInventariosPNG} style={[styles.logo]}/>
-      <SquareOptionMenu/>
-      <Button title='Ir a Ajustes' onPress={goToSettings}/>
+      <SquareOptionMenu onPress={goToSettings}/>
+      {/* <Button title='Ir a Ajustes' onPress={goToSettings}/> */}
     </SafeAreaView>
   )
 }

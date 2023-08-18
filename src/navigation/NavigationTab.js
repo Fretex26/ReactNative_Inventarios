@@ -30,12 +30,13 @@ const PokeIcon = ({ onPress }) => (
 export default function NavigationTab() {
   return (
     <Tab.Navigator>
-        {/* <Tab.Screen name="Home" component={HomeScreen} options={{
-          tabBarLabel: 'yondu',
+        <Tab.Screen name="Homer" component={HomeScreen} options={{
+          tabBarLabel: '',
           tabBarIcon: ({color,size})=>(
-            <MaterialIcons name='settings' color={color} size={size}/>
-          )
-        }}/> */}
+            <MaterialIcons name='settings' color={'transparent'} size={size}/>
+          ),
+          headerShown: false
+        }}/>
 
         <Tab.Screen name='Home' component={HomeScreen} 
           options={({navigation})=>({
@@ -47,12 +48,12 @@ export default function NavigationTab() {
           })}
         />
         
-        {/* <Tab.Screen name="Settings" component={SettingsScreen} options={{
-          tabBarLabel: 'Settings',
+        <Tab.Screen name="Settings" component={SettingsScreen} options={{
+          tabBarLabel: '',
           tabBarIcon: ({color,size})=>(
-            <MaterialIcons name='settings' color={color} size={size}/>
+            <MaterialIcons name='settings' color={'transparent'} size={size}/>
           )
-        }}/> */}
+        }}/>
     </Tab.Navigator>
   )
 }

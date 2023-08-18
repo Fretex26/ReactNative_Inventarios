@@ -50,6 +50,10 @@ export default function SquareOptionMenu(props) {
     navigation.navigate("Home")
   }
 
+  const goToSettings = () =>{
+    navigation.navigate("Settings")
+  }
+
   const [selectedId, setSelectedId] = useState();
 
   const renderItem = ({item}) => {
@@ -60,8 +64,8 @@ export default function SquareOptionMenu(props) {
       <Item
         item={item}
         onPress={() => {
-          setSelectedId(item.id)
-          navigation.navigate('Home')
+          setSelectedId(item.id);
+          props.onPress()
         }}
         backgroundColor={backgroundColor}
         textColor={color}
